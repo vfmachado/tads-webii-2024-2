@@ -66,21 +66,12 @@ formatos intercambiáveis de dados. Implantação.
 
 * Semana 12 - Mailing
 
-* Semana 13 - AWS SDK; S3, SES, LAMBDA; 
+* Semana 13 - AWS SDK; S3, SES, LAMBDA; TRABALHO V
 
-* Semana 14 - Coringa + TRABALHO V
+* Semana 14 - Construção de APIS; NESTJS e aplicações backend - Autenticação & Autorização + JWT Tokens; https://roadmap.sh/api-design
 
-* Semana 15 - Construção de APIS; NESTJS e aplicações backend - Autenticação & Autorização + JWT Tokens; https://roadmap.sh/api-design
+* Semana 15 - NESTJS e aplicações backend; Testes; Swagger; TRABALHO VI
 
-* Semana 16 - NESTJS e aplicações backend; Testes;
-
-* Semana 17 - Swagger & TRABALHO VI
-
-* Semana 18 - Coringa
-
-* Semana 19 - Coringa
-
-* Semana 20 - Exame
 
 
 
