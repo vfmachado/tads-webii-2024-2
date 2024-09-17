@@ -1,6 +1,9 @@
 # Trabalho I
 
-Exercícios com ExpressJS
+Data de Entrega: 01/10/2024
+Enviar via SIGAA o link para acesso a um repositório do Github.
+
+### Exercícios com ExpressJS
 
 ## 1. **Instalação e Configuração do Express.js**
    - **Descrição:** Instale o Express.js em um projeto Node.js e configure uma rota GET que responda com uma mensagem de boas-vindas.
