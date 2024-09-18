@@ -103,9 +103,9 @@ A arquitetura do Node.js é baseada em um modelo de **evento não bloqueante** e
    - Editora: Packt Publishing
    - Descrição: Aborda padrões de design e melhores práticas no desenvolvimento com Node.js.
 
-4. **Artigo: "The Netflix Journey to Node.js"**
+4. **Artigo: "Node.JS in Flames"**
    - Autor: Netflix TechBlog
-   - Link: [https://netflixtechblog.com/the-netflix-journey-to-node-js-27b7d8c8f3c](https://netflixtechblog.com/the-netflix-journey-to-node-js-27b7d8c8f3c)
+   - Link: [https://netflixtechblog.com/node-js-in-flames-ddd073803aa4](https://netflixtechblog.com/node-js-in-flames-ddd073803aa4)
    - Descrição: Discussão sobre a adoção do Node.js pela Netflix e os benefícios obtidos.
 
 5. **Relatório: "Node.js User Survey Report"**
