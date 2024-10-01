@@ -48,7 +48,7 @@ formatos intercambiáveis de dados. Implantação.
 
 * Semana 03 - Continuação express.js; TRABALHO I
 
-* Semana 04 - MVC - Model - ModelDAO / View / Controller; EJS; https://medium.com/@ankit.sinhal/mvc-mvp-and-mvvm-design-pattern-6e169567bbad
+* Semana 04 - MVC - Model - ModelDAO / View / Controller; EJS;
 
 * Semana 05 - Conexão com banco de dados & Abstrações com banco de dados; TRABALHO II
 
