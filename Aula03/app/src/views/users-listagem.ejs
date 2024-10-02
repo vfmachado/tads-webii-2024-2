@@ -1,0 +1,17 @@
+<%- include('includes/head') %>
+
+<body>
+    <%- include('includes/nav') %>
+
+    <h1>TESTE EJS</h1>
+    <h1> <%= data.title %> </h1>
+    <ul>
+        <% for (let i = 0; i < data.names.length; i++) { %>
+            <li>
+                <%= data.names[i] %>
+            </li>
+        <% } %>
+
+    </ul>
+</body>
+</html>
