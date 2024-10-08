@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Table with Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  
+  <header class="bg-blue-600 text-white p-4">
+    <h1 class="text-center text-3xl font-semibold">User Management</h1>
+  </header>
+
+  <div class="container mx-auto mt-8">
+
+    <div class="bg-white shadow-md rounded my-6">
+      <table class="min-w-full table-auto">
+        <thead>
+          <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+            <th class="py-3 px-6 text-left">ID</th>
+            <th class="py-3 px-6 text-left">Name</th>
+            <th class="py-3 px-6 text-left">CPF</th>
+            <th class="py-3 px-6 text-left">Email</th>
+            <th class="py-3 px-6 text-left">Phone</th>
+            <th class="py-3 px-6 text-left">Role</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600 text-sm font-light">
+          <tr class="border-b border-gray-200 hover:bg-gray-100">
+            <td class="py-3 px-6 text-left whitespace-nowrap">1</td>
+            <td class="py-3 px-6 text-left">John Doe</td>
+            <td class="py-3 px-6 text-left">123.456.789-00</td>
+            <td class="py-3 px-6 text-left">john@example.com</td>
+            <td class="py-3 px-6 text-left">(11) 98765-4321</td>
+            <td class="py-3 px-6 text-left">Admin</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flex justify-between items-center mt-4">
+      <span class="text-sm text-gray-600">Showing 1 to 10 of 50 entries</span>
+      <nav class="inline-flex shadow-sm">
+        <button class="px-3 py-1 bg-gray-300 text-gray-800 rounded-l-md">Previous</button>
+        <button class="px-3 py-1 bg-gray-300 text-gray-800">1</button>
+        <button class="px-3 py-1 bg-gray-300 text-gray-800">2</button>
+        <button class="px-3 py-1 bg-gray-300 text-gray-800">3</button>
+        <button class="px-3 py-1 bg-gray-300 text-gray-800">Next</button>
+      </nav>
+    </div>
+  </div>
+
+</body>
+</html>
