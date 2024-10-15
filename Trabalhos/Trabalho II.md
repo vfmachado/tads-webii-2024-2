@@ -59,6 +59,8 @@ O sistema deve permitir o gerenciamento de usuários e seus dados, seguindo as r
    - **Rota `/deleteUser/:id`:** Permitir a exclusão de usuários, com validação para impedir a exclusão de ADMINs.
    - **Rota `/updateUser/:id`:** Exibir o formulário de atualização de dados do usuário, exceto CPF e perfil, permitindo a edição de telefones e emails.
 
+   Atenção: apesar da especificidade das rotas, todas as funcionalidades da aplicação devem ser acessíveis via interação do usuário com a página, isto é, deve ser possível clicar em um botão ou link para adicionar um usuário, atualizar ou deletar.
+
 3. **Validar as Regras de Negócio:**
    - Implementar validações para garantir que o CPF seja único.
    - Certificar-se de que os perfis (ADMIN/CLIENTE) não possam ser alterados após o cadastro.
