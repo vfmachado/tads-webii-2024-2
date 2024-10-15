@@ -1,6 +1,6 @@
 // import com {} importa apenas o Router de dentro do express
 import { Router } from 'express';
-import { listaUsers, paginaAddUser, addUser } from '../controllers/users-controller.js';
+import { listaUsers, paginaAddUser, addUser, detalhaUser } from '../controllers/users-controller.js';
 
 const router = Router();
 
@@ -9,6 +9,8 @@ const router = Router();
 //     return listaUsers(req, res);
 // });
 router.get('/', listaUsers);
+
+router.get('/:id', detalhaUser);
 
 router.get('/add', paginaAddUser);
 

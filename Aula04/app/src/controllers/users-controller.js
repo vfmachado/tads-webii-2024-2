@@ -32,19 +32,36 @@ function paginaAddUser(req, res) {
 // AUTENTICACAO
 // AUTORIZAÇÃO
 function addUser(req, res) {
-    console.log({ rota: "/users/add", data: req.body })
-    const userDao = new UserDao();
+    try {
+        console.log({ rota: "/users/add", data: req.body })
+        const userDao = new UserDao();
 
-    // const { name, email, password } = req.body;
-    // userDao.save({
-    //     name, email, password
-    // })
+        // const { name, email, password } = req.body;
+        // userDao.save({
+        //     name, email, password
+        // })
 
-    const dados = req.body;
-    const newUser = new User(dados.name, dados.email, dados.password);
-    userDao.save(newUser);
+        const dados = req.body;
+        try {
+            const newUser = new User(dados.name, dados.email, dados.password);
+            userDao.save(newUser);
+        } catch (error) {
+            // por exemplo, o cpf já existe 
+            res.status(400).send("O CPF JA EXISTE");
+        }
+        res.redirect("/users");
+    } catch (error) {
+        res.status(500).send("HOUVE UM ERRO AO ADICIONAR USUARIO");
+    }
+}
 
-    res.redirect("/users");
+
+function detalhaUser(req, res) {
+    const { id } = req.params;
+    // consulta o banco
+    // vai carregar o dados
+    // vai mandar para a tua view
+    res.send("DETALHES DO USUARIO ID " + id);
 }
 
 export {
@@ -59,4 +76,6 @@ export {
     // usuario tem que ter multiplos emails (apenas 1 principal)    1:m
 
     // INDIVIDUAL ou DUPLA E VCS TEM DUAS SEMANAS =)
+
+    detalhaUser,
 };

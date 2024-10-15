@@ -1,5 +1,13 @@
 import Database from 'better-sqlite3';
 
+import { dir } from '../dirroot.js';
+console.log({ dir });
+
+// faz o caminho ser AGNOSTICO ao Sistema operacional
+import path from 'path';
+const pathDB = path.join(dir, '..', 'dados.db');
+console.log({ pathDB });
+
 const db = new Database('dados.db', {
    verbose: console.log 
 });

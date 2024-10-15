@@ -69,9 +69,10 @@ O sistema deve permitir o gerenciamento de usuários e seus dados, seguindo as r
 
 **Avaliação:**
 O projeto será avaliado com base nos seguintes critérios:
-- O trabalho pode ser realizado individualmente ou em dupla.
+- O trabalho pode ser realizado individualmente ou em dupla. No caso de duplas, coloque os nomes da PÁGINA INICIAL e no README.md
 - Implementação correta das funcionalidades.
 - Atendimento às regras de negócio.
 - Qualidade do código (organização, clareza, boas práticas).
 - Funcionalidade do sistema (correção de bugs e usabilidade).
+
 
