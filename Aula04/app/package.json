@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "app": "file:",
     "better-sqlite3": "11.3.0",
     "ejs": "3.1.10",
     "express": "4.21.0"
