@@ -1,0 +1,15 @@
+<%- include('includes/head') %>
+
+<body>
+    <%- include('includes/nav') %>
+
+    <h1>Tela Inicial</h1>
+    <% if (user) { %>
+        <p>Olá, <%= user.email %></p>
+        <a href="/logout">Sair</a>
+    <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/register">Registrar</a>
+    <% } %>
+</body>
+</html>
