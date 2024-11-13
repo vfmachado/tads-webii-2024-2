@@ -6,6 +6,26 @@
 //  "type": "module",   no package.json para forcar o projeto para um modulo js
 
 // const express = require('express');
+
+import dotenv from 'dotenv';
+const NODE_ENV = process.env.NODE_ENV;
+
+if (NODE_ENV === 'development') {
+    console.log("Running in development mode");
+    dotenv.config({ path: '.env.development' });
+} else if (NODE_ENV === 'production') {
+    console.log("Running in production mode");
+    dotenv.config({ path: '.env.production' });
+}
+
+console.log({
+    ENV: process.env.NODE_ENV,
+    PORT: process.env.PORT,
+    DATABASE_URL: process.env.DATABASE_URL,
+    APP_SECRET: process.env.APP_SECRET,
+    HASH_SECRET: process.env.HASH_SECRET,
+})
+
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient({
@@ -20,7 +40,13 @@ import bcrypt from 'bcrypt';
 import { isAuth } from './middlewares/is-auth.js';
 import { isAdmin } from './middlewares/is-admin.js';
 
+import multer from 'multer';
+const upload = multer({ dest: 'uploads/' })
+
+
 const app = express();
+
+app.use(express.static('uploads')); // torna a pasta de uploads estatica
 
 app.use(express.json()); // trabalhando com apis
 app.use(express.urlencoded({
@@ -45,6 +71,7 @@ app.use((req, res, next) => {
 
 // meu MIDDLEWARE
 app.use((req, res, next) => {
+    if (NODE_ENV == 'production') return next();
     console.log('Middleware');
     console.log({
         url: req.url,
@@ -148,7 +175,9 @@ app.post('/login', async (req, res) => {
         return res.status(404).json({ error: 'User not found' });
     }
 
-    const isValid = bcrypt.compareSync(password, user.password);
+    console.log({ user })
+
+    const isValid = bcrypt.compareSync("CHAVE"+ password, user.password);
     if (!isValid) {
         return res.status(400).json({ error: 'invalid credentials' });
     }
@@ -166,5 +195,40 @@ app.post('/login', async (req, res) => {
 // importar as rotas de usuario e adicionar ao meu app
 // import usersRouter from './routes/users-routes.js';
 // app.use('/users', usersRouter);
+
+app.post('/publicar-foto', upload.single('foto'), async (req, res) => {
+    console.log(req.file);
+
+    // imageId = req.file.filename
+    // authorId = req.session.user.userId
+    // message = "NOVA FOTO"
+
+    await prisma.post.create({
+        data: {
+            imageId: req.file.filename,
+            authorId: req.session.user.userId,
+            message: "NOVA FOTO",
+        },
+    });
+
+    res.send('OK');
+});
+
+
+app.get('/users/:id', async (req, res) => {
+    const { id } = req.params;
+    const user = await prisma.user.findUnique({
+        where: {
+            id: parseInt(id),
+        },
+        include: {
+            posts: true,
+        },
+    });
+    res.render('detalhar-usuario', { user });
+});
+
+// opcao 1 = criar uma rota que entrega um arquivo estatico
+// opcao 2 = tornar toda pasta de uploads estatica
 
 app.listen(3000, () => console.log("Server iniciou na porta 3000"));
