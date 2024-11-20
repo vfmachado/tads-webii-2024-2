@@ -1,0 +1,21 @@
+<%- include('includes/head') %>
+
+<body>
+    <%- include('includes/nav') %>
+
+    <h1>Tela Inicial</h1>
+    <% if (user) { %>
+        <p>Olá, <%= user.email %></p>
+
+        <form action="publicar-foto" method="post" enctype="multipart/form-data">
+            <input type="file" name="foto" id="fotoId">
+            <button type="submit">Publicar</button>
+        </form>
+
+        <a href="/logout">Sair</a>
+    <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/register">Registrar</a>
+    <% } %>
+</body>
+</html>

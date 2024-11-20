@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocalização</title>
+</head>
+<body>
+  <h1>Geolocalização do Usuário</h1>
+  <button id="getLocation">Obter Localização</button>
+  <p id="location"></p>
+  <script>
+    const button = document.getElementById("getLocation");
+    const locationDisplay = document.getElementById("location");
+
+    button.addEventListener("click", () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            locationDisplay.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+          },
+          (error) => {
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                locationDisplay.textContent = "Permissão negada pelo usuário.";
+                break;
+              case error.POSITION_UNAVAILABLE:
+                locationDisplay.textContent = "Informação de localização indisponível.";
+                break;
+              case error.TIMEOUT:
+                locationDisplay.textContent = "Tempo de solicitação esgotado.";
+                break;
+              default:
+                locationDisplay.textContent = "Erro desconhecido.";
+            }
+          }
+        );
+      } else {
+        locationDisplay.textContent = "Geolocalização não é suportada pelo seu navegador.";
+      }
+    });
+  </script>
+</body>
+</html>
