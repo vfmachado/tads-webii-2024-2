@@ -21,6 +21,7 @@ model User {
   password String
   posts    Post[]
   comments Comment[]
+  endereco Endereco?
 }
 
 model Post {
@@ -50,4 +51,14 @@ model Comment {
   post    Post     @relation(fields: [postId], references: [id])
   
   createdAt DateTime @default(now())
+}
+
+model Endereco {
+  id      Int      @id @default(autoincrement())
+  rua     String
+  numero  Int
+  cidade  String
+  estado  String
+  userId  Int      @unique
+  user    User     @relation(fields: [userId], references: [id])
 }

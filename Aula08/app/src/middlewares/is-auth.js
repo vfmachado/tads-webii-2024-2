@@ -10,16 +10,16 @@ const isAuth = async (req, res, next) => {
     }   
     
     // toda vez eu farei a requisição ao banco de dados para pegar o usuário ?
-    req.session.user = await prisma.user.findUnique({
-        where: {
-            email: req.session.user.email,
-        },
-        select: {
-            // id: true,
-            email: true,
-            role: true,
-        },
-    });
+    // req.session.user = await prisma.user.findUnique({
+    //     where: {
+    //         email: req.session.user.email,
+    //     },
+    //     select: {
+    //         // id: true,
+    //         email: true,
+    //         role: true,
+    //     },
+    // });
 
 
     next();

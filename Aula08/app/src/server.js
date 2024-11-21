@@ -149,6 +149,7 @@ app.get('/users', isAuth, isAdmin, async (req, res) => {
     res.json(users);
 });
 
+// para acessar posts, adicionamos um middleware que verifica se o usuario está logado
 app.get('/posts', isAuth, async (req, res) => {
     const posts = await prisma.post.findMany();
     res.json(posts);
@@ -180,6 +181,7 @@ app.post('/login', async (req, res) => {
 
     console.log({ user })
 
+    // DAR UMA OLHADA BCRYPT
     const isValid = bcrypt.compareSync("CHAVE"+ password, user.password);
     if (!isValid) {
         return res.status(400).json({ error: 'invalid credentials' });
@@ -229,8 +231,11 @@ app.get('/users/:id', async (req, res) => {
         },
         include: {
             posts: true,
+            endereco: true,
         },
     });
+    console.log(JSON.stringify(user, null, 2))
+    
     res.render('detalhar-usuario', { user });
 });
 
