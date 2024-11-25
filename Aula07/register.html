@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register & Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+
+  <!-- Register Screen -->
+  <div id="register-screen" class="w-full max-w-md p-6 bg-gray-800 rounded-lg shadow-lg text-white hidden">
+    <h2 class="text-3xl font-bold mb-6 text-center">Register</h2>
+    <form>
+      <div class="mb-4">
+        <label for="register-email" class="block text-sm font-medium">Email</label>
+        <input id="register-email" type="email" class="mt-1 w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <div class="mb-4">
+        <label for="register-password" class="block text-sm font-medium">Password</label>
+        <input id="register-password" type="password" class="mt-1 w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded mt-4">Sign Up</button>
+    </form>
+    <p class="text-center mt-4">Already have an account? <button onclick="toggleScreens()" class="text-blue-400 hover:underline">Login here</button></p>
+  </div>
+
+  <!-- Login Screen -->
+  <div id="login-screen" class="w-full max-w-md p-6 bg-gray-800 rounded-lg shadow-lg text-white">
+    <h2 class="text-3xl font-bold mb-6 text-center">Login</h2>
+    <form>
+      <div class="mb-4">
+        <label for="login-email" class="block text-sm font-medium">Email</label>
+        <input id="login-email" type="email" class="mt-1 w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <div class="mb-4">
+        <label for="login-password" class="block text-sm font-medium">Password</label>
+        <input id="login-password" type="password" class="mt-1 w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded mt-4">Log In</button>
+    </form>
+    <p class="text-center mt-4">Don't have an account? <button onclick="toggleScreens()" class="text-blue-400 hover:underline">Register here</button></p>
+  </div>
+
+  <script>
+    function toggleScreens() {
+      const registerScreen = document.getElementById('register-screen');
+      const loginScreen = document.getElementById('login-screen');
+      registerScreen.classList.toggle('hidden');
+      loginScreen.classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>

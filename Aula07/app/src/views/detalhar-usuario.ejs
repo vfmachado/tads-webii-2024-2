@@ -1,0 +1,27 @@
+<%- include('includes/head') %>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <%- include('includes/nav') %>
+
+    <!-- Container principal -->
+    <div class="max-w-4xl mx-auto p-6">
+
+        <!-- Título do Usuário -->
+        <div class="text-center my-8">
+            <h1 class="text-3xl font-bold text-blue-600"><%= user.name %></h1>
+        </div>
+
+        <!-- Lista de Posts do Usuário -->
+        <ul class="space-y-6">
+            <% for (let i = 0; i < user.posts.length; i++) { %>
+                <li class="bg-white shadow-md rounded-lg p-6">
+                    <p class="text-lg text-gray-700 mb-4"><%= user.posts[i].message %></p>
+                    <div class="flex justify-center">
+                        <img src="/<%= user.posts[i].imageId %>" alt="User Image" class="w-48 h-48 object-cover rounded-md shadow-lg">
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
