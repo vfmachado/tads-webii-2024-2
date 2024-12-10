@@ -18,6 +18,7 @@ A API deverá ser implementada utilizando as seguintes ferramentas e bibliotecas
 
 1. **Cadastro de Usuário e Autenticação**
    - Implementar o cadastro de usuários com autenticação via JWT.
+   - Validar o email do usuário através de um token enviado por email.
    - Disponibilizar rota de login com geração de token.
    - (1,0 ponto)
 
