@@ -1,5 +1,7 @@
 # Trabalho IV - TODO API
 
+## Pode ser feito em dupla
+
 ## Objetivo do Trabalho
 O objetivo deste trabalho é desenvolver uma API REST utilizando as tecnologias apresentadas em aula, visando consolidar os conhecimentos em desenvolvimento web backend. A aplicação deve permitir o gerenciamento de listas de tarefas (TODOs), categorias associadas e funcionalidades de compartilhamento entre usuários, garantindo uma implementação com boas práticas de código e usabilidade.
 
@@ -70,6 +72,6 @@ A pontuação total deste trabalho é de 10,0 pontos, distribuída conforme desc
 - Código-fonte em um repositório versionado (GitHub ou similar).
 - Documentação da API gerada com Swagger.
 - Collection de testes configurada no Insomnia, Thunderclient ou Postman.
-- Prazo de entrega: 20/12/2024. 
+- Prazo de entrega: 22/12/2024. 
 
 Caso tenha dúvidas, entre em contato com o professor para esclarecimentos antes do prazo final.
