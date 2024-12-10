@@ -73,8 +73,6 @@ formatos intercambiáveis de dados. Implantação.
 * Semana 15 - NESTJS e aplicações backend; Testes; Swagger; TRABALHO VI
 
 
-
-
 ### Possibilidades
 
 Docker
